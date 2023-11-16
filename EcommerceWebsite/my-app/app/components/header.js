@@ -19,8 +19,8 @@ const Box = () => {
             </div>
         </div>
         <div className="relative top-[20px]">
-            <div><AiOutlineHeart className="text-black absolute w-[28px] h-[23px] top-[9px] left-[1250px]" /></div>
-            <div><AiOutlineShoppingCart className="text-black absolute w-[28px] h-[23px] top-[9px] left-[1310px]" /></div>
+            <div><AiOutlineHeart className="text-black absolute w-[28px] h-[23px] top-[9px] left-[1350px]" /></div>
+            <div><AiOutlineShoppingCart className="text-black absolute w-[28px] h-[23px] top-[9px] left-[1390px]" /></div>
             <div className="inline-flex items-center justify-center gap-[5px] absolute top-0 left-0">
             <img className="relative w-[50px] h-[32px]" alt="Meubel house logos" src="/favicon.ico" />
             <div className="relative w-fit mt-[-1.00px] [font-family:'Montserrat-Bold',Helvetica] font-bold text-black text-[34px] tracking-[0] leading-[normal]">

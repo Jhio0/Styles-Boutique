@@ -18,7 +18,7 @@ const Desktop = () => {
   return (
     <div className="bg-[#f9f1e7] flex flex-row justify-center w-full">
       <div className="bg-[#f9f1e7] w-[1440px] h-[1024px] relative">
-        <div className="absolute w-[1440px] h-[489px] top-[82px] left-0 bg-[url(../assets/image1.jpg)] bg-cover bg-[50%_50%]">
+        <div className="absolute w-[1500px] h-[589px] top-[82px] left-0 bg-[url(../assets/image1.jpg)] bg-cover bg-[50%_50%]">
           <div className="absolute w-[924px] h-[191px] top-[138px] left-[268px]">
             <div className="absolute top-0 left-[100px] [font-family:'Poppins-ExtraBold',Helvetica] font-extrabold text-white text-[96px] tracking-[0] leading-[normal]">
               RENT A TOOL

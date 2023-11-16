@@ -17,8 +17,9 @@ const Desktop = () => {
 
   return (
     <div className="bg-[#f9f1e7] flex flex-row justify-center w-full">
-      <div className="bg-[#f9f1e7] w-[1440px] h-[1024px] relative">
-        <div className="absolute w-[1440px] h-[489px] top-[82px] left-0 bg-[url(../assets/image1.jpg)] bg-cover bg-[50%_50%]">
+      <Box />
+      <div className="bg-[#f9f1e7] w-[1440px] h-[1024px] flex-2 items-center justify-center">
+        <div className="w-[1440px] h-[489px] top-[82px] left-0 bg-[url(../assets/image1.jpg)] bg-cover bg-[50%_50%]">
           <div className="absolute w-[924px] h-[191px] top-[138px] left-[268px]">
             <div className="absolute top-0 left-[100px] [font-family:'Poppins-ExtraBold',Helvetica] font-extrabold text-white text-[96px] tracking-[0] leading-[normal]">
               RENT A TOOL
@@ -31,7 +32,6 @@ const Desktop = () => {
             <div><AiOutlineSearch className="text-black absolute w-[24px] h-[24px] top-[16px] left-[473px]" /></div>
           </div>
         </div>
-        <Box />
         <div className="absolute top-[607px] ">
           <div className="relative flex items-center">
             <MdChevronLeft onClick={slideLeft} size={40} className="text-black opacity-50 cursor-pointer hover:opacity-100" />
