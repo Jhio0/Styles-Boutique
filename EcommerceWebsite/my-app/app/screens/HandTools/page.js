@@ -1,11 +1,11 @@
 'use client'
 import React, { useState } from "react";
-import { Box } from "../components/header";
-import { categoryList } from "../components/categoryList";
+import { Box } from "../../components/header";
+import { categoryList } from "../../components/categoryList";
 import { AiOutlineSearch } from 'react-icons/ai';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 
-const Desktop = () => {
+const page = () => {
   const slideLeft = () => {
     var slider = document.getElementById('slider')
     slider.scrollLeft = slider.scrollLeft - 500;
@@ -51,4 +51,4 @@ const Desktop = () => {
   );
 };
 
-export default Desktop;
+export default page;

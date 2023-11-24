@@ -1,35 +1,28 @@
 import React from "react";
+import Link from "next/link";
+
 import {AiOutlineHeart, AiOutlineShoppingCart} from 'react-icons/ai'
 
 const Box = () => {
   return (
-    <div className="flex-center ">
-        <div className="absolute w-[438px] h-[24px] top-[35px] left-[472px]">
-            <div className="left-0 absolute top-0 [font-family:'Poppins-Medium',Helvetica] font-medium text-black text-[16px] tracking-[0] leading-[normal]">
-            Home
-            </div>
-            <div className="left-[123px] absolute top-0 [font-family:'Poppins-Medium',Helvetica] font-medium text-black text-[16px] tracking-[0] leading-[normal]">
-            Shop
-            </div>
-            <div className="left-[240px] absolute top-0 [font-family:'Poppins-Medium',Helvetica] font-medium text-black text-[16px] tracking-[0] leading-[normal]">
-            About
-            </div>
-            <div className="absolute top-0 left-[364px] [font-family:'Poppins-Medium',Helvetica] font-medium text-black text-[16px] tracking-[0] leading-[normal]">
-            Contact
-            </div>
-        </div>
-        <div className="relative top-[20px]">
-            <div><AiOutlineHeart className="text-black absolute w-[28px] h-[23px] top-[9px] left-[1350px]" /></div>
-            <div><AiOutlineShoppingCart className="text-black absolute w-[28px] h-[23px] top-[9px] left-[1390px]" /></div>
-            <div className="inline-flex items-center justify-center gap-[5px] absolute top-0 left-0">
-            <img className="relative w-[50px] h-[32px]" alt="Meubel house logos" src="/favicon.ico" />
-            <div className="relative w-fit mt-[-1.00px] [font-family:'Montserrat-Bold',Helvetica] font-bold text-black text-[34px] tracking-[0] leading-[normal]">
-                Rent-Tool
-            </div>
-            </div>
-        </div>
+   <div className="container mx-auto mt-3 max-w-screen-xxl  flex items-center border-b-2 ">
+    <div className="mr-5">
+    <div className="text-[22px] font-bold text-black">
+      <Link href="/app">Rent-A-Tool</Link>
     </div>
-    
+    </div>
+    <div className="grow">
+      <div className="md:flex items-center justify-center gap-2 md:gap-8">
+        <Link href="/screens/powertools" className="text=-[16px] text-black hover:font-bold">Home</Link>
+        <Link href="/item" className="text-black hover:font-bold">About</Link>
+        <Link href="contact" className="text-black hover:font-bold">Contact</Link>
+      </div>
+    </div>
+    <div className="ml-auto lg:flex">
+      <Link href="register" className="mr-2 text-black hover:font-bold"><AiOutlineHeart className="w-[28px] h-[23px]"></AiOutlineHeart></Link>
+      <Link href="login" className=" text-black hover:font-bold"><AiOutlineShoppingCart className="w-[28px] h-[23px]"></AiOutlineShoppingCart></Link>
+    </div>
+   </div>
   );
 };
 export {Box};
