@@ -7,9 +7,9 @@ const Box = () => {
   return (
    <div className="container mx-auto mt-3 max-w-screen-xxl  flex items-center border-b-2 ">
     <div className="mr-5">
-    <div className="text-[22px] font-bold text-black">
-      <Link href="/app">Rent-A-Tool</Link>
-    </div>
+      <div className="text-[22px] font-bold text-black">
+        <Link href="/app">Rent-A-Tool</Link>
+      </div>
     </div>
     <div className="grow">
       <div className="md:flex items-center justify-center gap-2 md:gap-8">
