@@ -17,14 +17,14 @@ const page = () => {
   };
 
   return (
-    <div className="bg-[#f9f1e7] flex flex-col items-center justify-center">
+    <div className="bg-[#f5f5f5] flex flex-col items-center justify-center">
       <Box/>
-        <div className="bg-cover bg-center m-5 flex flex-col justify-center items-center w-full h-[530px] bg-[url(../assets/image1.jpg)] ">
+        <div className="bg-cover bg-center m-5 flex flex-col justify-center items-center w-full h-[530px] bg-[url(../assets/mainPage3.jpg)] ">
             <p className="flex items-center font-family:'Poppins-Medium',Helvetica] font-medium text-white text-[38.4px] tracking-[6.38px] leading-[normal]">
-              Find The Right Tools for your Project
+            Elevate Your Wardrobe with Unique Styles for Every Vibe
             </p>
             <div className="flex justify-center items-center[font-family:'Poppins-ExtraBold',Helvetica] font-extrabold text-white text-[96px] tracking-[0] leading-[normal]">
-              RENT A TOOL
+            StyleScape Boutique
             </div>
             <div className="flex items-center w-[518px] h-[38px] bg-white rounded-[10px] border border-solid border-[#9f9f9f]">
               <div className="flex justify-center items-center ml-auto mr-3"><AiOutlineSearch className="w-5 h-5 text-black" /></div>
@@ -33,6 +33,7 @@ const page = () => {
         <div className="flex mb-5">
           <div className="flex items-center ">
             <MdChevronLeft onClick={slideLeft} size={40} className="text-black opacity-50 cursor-pointer hover:opacity-100" />
+            
             <div id="slider" className="scrollbar-hide w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth">
               {categoryList.map((item) => (
                 <Link key={item.id} href={`/screens/${item.name}`}>
@@ -51,4 +52,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default page;  

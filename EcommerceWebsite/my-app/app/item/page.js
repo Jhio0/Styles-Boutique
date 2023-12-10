@@ -1,34 +1,78 @@
+'use client'
 import React from "react";
+import { useState, useEffect } from "react";
 import { Box } from "../components/header";
 import { FaStar } from 'react-icons/fa';
+import { useSearchParams } from 'next/navigation'
+import { useDispatch } from 'react-redux';
+import { add } from '@/redux/CartSlice';
 
-const page = () => {
+function ProductDetailsPage ({selectedProduct})  {
+    const searchParams = useSearchParams()
+    const id = searchParams.get('id');
+    const [product, setProduct] = useState(null);
+
+    const dispatch = useDispatch();
+
+    const [textBoxValue, setTextBoxValue] = useState('');
+
+
+    const handleAdd = (product) => {
+        dispatch(add(product));
+    }
+
+    useEffect(() => {
+        const fetchProductDetails = async () => {
+          try {
+            const res = await fetch(`https://api.escuelajs.co/api/v1/products/${id}`);
+            const data = await res.json();
+            setProduct(data);
+          } catch (error) {
+            console.error('Error fetching product details:', error);
+          }
+        };
+    
+        if (id) {
+          fetchProductDetails();
+        }
+      }, [id]);
+
+      if (!product) {
+        // Render loading state or handle the absence of the product details
+        return <p>Loading...</p>;
+      }
     return (
-        <div className="bg-[#ffff] flex flex-col justify-center">
+        <div className="bg-white min-h-screen flex flex-col justify-start">
             <Box/>
-            <div className="flex w-full h-[71px] bg-[#F9F1E7]"></div>
+            <div className="flex w-full h-[71px] bg-[#F9F1E7] "></div>
             <div className="flex justify-center p-10">
-                <div className="flex flex-col justify-center pr-[50px]">
-                    <img className="p-[5px] w-[100px] h-[100px] rounded-[20px]" src={"https://images.unsplash.com/photo-1504805572947-34fad45aed93?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2607&q=80https://images.unsplash.com/photo-1504805572947-34fad45aed93?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2607&q=80"} alt='/' />
-                    <img className="p-[5px] w-[100px] h-[100px] rounded-[20px]" src={"https://images.unsplash.com/photo-1504805572947-34fad45aed93?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2607&q=80https://images.unsplash.com/photo-1504805572947-34fad45aed93?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2607&q=80"} alt='/' />
-                    <img className="p-[5px] w-[100px] h-[100px] rounded-[20px]" src={"https://images.unsplash.com/photo-1504805572947-34fad45aed93?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2607&q=80https://images.unsplash.com/photo-1504805572947-34fad45aed93?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2607&q=80"} alt='/' />
+
+                <div className="flex flex-col justify-center p-[30px] ">
+                    <img className="border border-black border-r-4 mb-8 p-[5px] w-[150px] h-[150px] rounded-[20px]" src={product.images} alt='/' />
+                    <img className="border border-black border-r-4 mb-8 p-[5px] w-[150px] h-[150px] rounded-[20px]" src={product.images} alt='/' />
+                    <img className="border border-black border-r-4 mb-8 p-[5px] w-[150px] h-[150px] rounded-[20px]" src={product.images} alt='/' />
                 </div>
-                <img className="w-[301px] h-[330px] rounded-[20px]" src={"https://images.unsplash.com/photo-1504805572947-34fad45aed93?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2607&q=80https://images.unsplash.com/photo-1504805572947-34fad45aed93?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2607&q=80"} alt='/' />
-                <div className="flex flex-col">
-                    <p className="text-black text-[42px] pl-5 pb-2">Asgard sofa</p>
+                <div className="flex items-center mb-9">
+                    <img className="border border-black border-opacity-25 w-[501px] h-[530px] rounded-[20px] "src={product.images} alt='/' />
+                </div>
+                <div className="flex flex-col justify-start pl-[150px] mt-3">
+                    <p className="text-black text-[30px] pl-5 pb-2">{product.title}</p>
                     <div className="flex flex-row pl-5 pb-2">
-                        <FaStar className="text-[#FFD700]"/>
-                        <FaStar className="text-[#FFD700]"/>
-                        <FaStar className="text-[#FFD700]"/>
-                        <FaStar className="text-[#FFD700]"/>
-                        <FaStar className="text-[#FFD700]"/>
+                        {[...Array(5)].map((_, index) => (
+                            <FaStar key={index} className="text-[#FFD700]" />
+                        ))}
                     </div>
-                    <p className="text-neutral-400 text-2xl pl-5 ">$99</p>
-                    <p className="w-[424px] h-20 text-black text-[13px] pl-5 pt-2">description Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound.</p>
+                    <p className="text-neutral-400 text-2xl pl-5 ">${product.price.toFixed(2)}</p>
+                    <p className="w-[424px] h-20 text-black text-[15px] pl-5 pt-2">{product.description}</p>
+                    <div className="flex ml-[20px] mt-[100px] w-[400px] ">
+                        <button onClick={() => handleAdd(product)} className= "w-full bg-black text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800">
+                            Add to Bag
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     )
 }
 
-export default page;
+export default ProductDetailsPage;
