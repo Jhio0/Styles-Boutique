@@ -41,6 +41,26 @@ function ProductDetailsPage ({selectedProduct})  {
         // Render loading state or handle the absence of the product details
         return <p>Loading...</p>;
       }
+
+      const renderStars = () => {
+        const stars = [];
+        const rating = product.rating.rate;
+    
+        for (let i = 0; i < 5; i++) {
+          if (i < Math.floor(rating)) {
+            // Full star
+            stars.push(<FaStar key={i} className="text-[#FFD700]" />);
+          } else if (i === Math.floor(rating) && rating % 1 !== 0) {
+            // Half star (if the rating has a decimal part)
+            stars.push(<FaStar key={i} className="text-[#FFD700] half-star" />);
+          } else {
+            // Empty star
+            stars.push(<FaStar key={i} className="text-gray-300" />);
+          }
+        }
+    
+        return stars;
+      };
     return (
         <div className="bg-white min-h-screen flex flex-col justify-start">
             <Box/>
@@ -57,11 +77,7 @@ function ProductDetailsPage ({selectedProduct})  {
                 </div>
                 <div className="flex flex-col justify-start pl-[150px] mt-3">
                     <p className="text-black text-[30px] pl-5 pb-2">{product.title}</p>
-                    <div className="flex flex-row pl-5 pb-2">
-                        {[...Array(5)].map((_, index) => (
-                            <FaStar key={index} className="text-[#FFD700]" />
-                        ))}
-                    </div>
+                    <div className="flex flex-row pl-5 pb-2">{renderStars()}</div>
                     <p className="text-neutral-400 text-2xl pl-5 ">{product.price.toFixed(2)}</p>
                     <p className="w-[424px] h-20 text-black text-[15px] pl-5 pt-2">{product.description}</p>
                     <div className="flex ml-[20px] mt-[100px] w-[400px] ">
