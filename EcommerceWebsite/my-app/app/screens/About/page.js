@@ -31,16 +31,17 @@ const JournalPage = () => {
               <Image
                 src={entry.image}
                 alt={entry.title}
-                width={40}
-                height={40}
-                className="w-full h-40 object-cover"
+                width={400}
+                height={300}
+                layout="fixed"
+                className="w-full h-60 "
               />
               <div className="p-4">
                 <p className="text-sm text-gray-500">{entry.category}</p>
                 <h3 className="text-xl font-semibold mb-2 text-gray-800">{entry.title}</h3>
                 <p className="text-gray-600">{entry.date}</p>
                 <a
-                  href={`#/${entry.id}`} // Replace with the actual link or route
+                  href={entry.web}  target="_blank" // Open link in a new tab or window // Replace with the actual link or route
                   className="mt-4 inline-block text-blue-500 hover:underline"
                 >
                   Read more

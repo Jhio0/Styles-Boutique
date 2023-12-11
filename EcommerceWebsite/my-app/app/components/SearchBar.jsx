@@ -6,7 +6,7 @@ export const SearchBar = ({setResults}) => {
     const [input, setInput] = useState("");
 
     const fetchData = (value) => {
-        fetch("https://api.escuelajs.co/api/v1/products").then((response) => response.json()).then((json) => {
+        fetch("https://fakestoreapi.com/products").then((response) => response.json()).then((json) => {
             const results = json.filter((user) => {
                 return (value && user && user.title && user.title.toLowerCase().includes(value))
             });

@@ -59,7 +59,7 @@ const Page = () => {
               className="group mt-4 focus:outline-none"
               onClick={() => handleAdd(product)}
             >
-              <span className="text-gray-500 group-hover:text-pink-600 transition duration-300 transform">
+              <span className="text-gray-500 group-hover:text-red-600 transition duration-300 transform">
                 <AiOutlineShoppingCart className="w-8 h-8" />
               </span>
             </button>
