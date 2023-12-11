@@ -6,7 +6,7 @@ const JournalPage = () => {
   return (
     <div className="min-h-screen bg-gray-100">
         <Box/>
-      <header className="bg-cover bg-center h-96 text-white flex items-center justify-center relative bg-[url(../assets/mainPage3.jpg)]">
+      <header className="bg-cover bg-center m-5 flex flex-col justify-center items-center w-full h-[530px]" style={{ backgroundImage: `url('../assets/mainPage3.jpg')` }}>
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="container mx-auto text-center relative z-10">
           <h1 className="text-4xl font-bold">Styles Boutique</h1>

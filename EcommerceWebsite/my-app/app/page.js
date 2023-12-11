@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import { Box } from "./components/header";
 import { categoryList } from "./components/categoryList";
-import { AiOutlineSearch } from 'react-icons/ai';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import Link from "next/link";
 
