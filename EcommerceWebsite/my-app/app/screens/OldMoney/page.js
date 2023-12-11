@@ -29,7 +29,7 @@ const Page = () => {
   return (
     <div className="bg-[#f8f9fa] min-h-screen">
       <Box />
-      <div className="bg-cover m-1 bg-center flex flex-col justify-center items-center h-[82px] bg-[url(../assets/mainPage3.jpg)]">
+      <div className="bg-cover m-1 bg-center flex flex-col justify-center items-center h-[82px] bg-[url(https://media.timeout.com/images/105419751/image.jpg)]">
         <p className="flex items-center font-family:'Poppins-Medium',Helvetica font-medium text-white text-[38.4px] tracking-[6.38px] leading-[normal]">
           Shop
         </p>
