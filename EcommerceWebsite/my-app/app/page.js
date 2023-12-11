@@ -7,7 +7,7 @@ import Link from "next/link";
 
 import { SearchBar } from "./components/SearchBar";
 import { SearchResultsList } from "./components/SearchResultsList";
-
+import Image from "next/image";
 const Page = () => {
   const slideLeft = () => {
     var slider = document.getElementById('slider')
@@ -43,7 +43,7 @@ const Page = () => {
               {categoryList.map((item) => (
                 <Link key={item.id} href={`/screens/${item.name}`}>
 
-                  <img className="w-[301px] h-[330px] rounded-[20px] inline-block p-2 cursor-pointer hover:scale-105 ease-in-out duration-300" src={item.img} alt='/' />
+                  <Image className="w-[301px] h-[330px] rounded-[20px] inline-block p-2 cursor-pointer hover:scale-105 ease-in-out duration-300" src={item.img} width={301} height={330} alt='/' />
                   
               
                 </Link>

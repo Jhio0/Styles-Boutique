@@ -4,6 +4,7 @@ import { Box } from "../../components/header";
 import { useDispatch } from 'react-redux';
 import { add } from '@/redux/CartSlice';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
+import Image from "next/image";
 
 import Link from "next/link";
 
@@ -13,7 +14,7 @@ const Page = () => {
   const dispatch = useDispatch();
 
   const getProducts = async () => {
-    const res = await fetch("https://api.escuelajs.co/api/v1/products");
+    const res = await fetch("https://fakestoreapi.com/products");
     const data = await res.json();
     setProducts(data);
   }
@@ -24,6 +25,7 @@ const Page = () => {
 
   useEffect(() => {
     getProducts();
+    console.log(products)
   }, []);
 
   return (
@@ -43,9 +45,11 @@ const Page = () => {
             className="flex flex-col justify-between items-center p-4 border border-gray-300 rounded-md transition transform hover:shadow-lg"
           ><Link href={{pathname: '/item', query: {id: product.id}}}>
             <Image
-              src={product.images}
+              src={product.image}
               alt={product.title}
-              className="h-[200px] object-cover mb-4 rounded-md"
+              width={200}
+              height={200}
+              className="h-[200px] w-full object-cover mb-4 rounded-md"
             />
           </Link>
             <div className="flex flex-col items-start">

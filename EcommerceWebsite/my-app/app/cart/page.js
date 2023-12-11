@@ -4,7 +4,7 @@ import React from 'react'
 import { remove, updateQuantity } from '@/redux/CartSlice';
 import { useDispatch,useSelector } from 'react-redux';
 import { Box } from '../components/header';
-
+import Image from 'next/image';
 const Cartpage = () => {
     const dispatch=useDispatch();
     const cartitems = useSelector((state)=>state.cart)
@@ -35,8 +35,10 @@ const Cartpage = () => {
                 className='flex items-center justify-between bg-white p-4 mb-4 rounded-lg shadow-md'
               >
                 <div className='flex items-center space-x-4'>
-                  <img
-                    src={item.images}
+                  <Image
+                    src={item.image}
+                    width={200}
+                    height={200}
                     alt='Product'
                     className='h-[200px] w-[200px] object-cover rounded'
                   />
