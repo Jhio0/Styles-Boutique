@@ -9,37 +9,37 @@ export const categoryList = [
     {
         name: "Category2",
         id: 2,
-        img: "/Category.avif"
+        img: "/categorypage.jpg"
     },
     {
         name: "Category3",
         id: 3,
-        img: "/Category.avif"
+        img: "/categorypage.jpg"
     },
     {
         name: "Category4",
         id: 4,
-        img: "/Category.avif"
+        img: "/categorypage.jpg"
     },
     {
         name: "Category5",
         id: 5,
-        img: "/Category.avif"
+        img: "/categorypage.jpg"
     },
     {
         name: "Category6",
         id: 6,
-        img: "/Category.avif"
+        img: "/categorypage.jpg"
     },
     {
         name: "Category7",
         id: 7,
-        img: "/Category.avif"
+        img: "/categorypage.jpg"
     },
     {
         name: "Category8",
         id: 8,
-        img: "/Category.avif"
+        img: "/categorypage.jpg"
     },
 
 ];
