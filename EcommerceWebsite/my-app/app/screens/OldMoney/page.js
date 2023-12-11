@@ -42,7 +42,7 @@ const Page = () => {
             key={product.id}
             className="flex flex-col justify-between items-center p-4 border border-gray-300 rounded-md transition transform hover:shadow-lg"
           ><Link href={{pathname: '/item', query: {id: product.id}}}>
-            <img
+            <Image
               src={product.images}
               alt={product.title}
               className="h-[200px] object-cover mb-4 rounded-md"

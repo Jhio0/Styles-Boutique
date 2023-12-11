@@ -48,12 +48,12 @@ function ProductDetailsPage ({selectedProduct})  {
             <div className="flex justify-center p-10">
 
                 <div className="flex flex-col justify-center p-[30px] ">
-                    <img className="border border-black border-r-4 mb-8 p-[5px] w-[150px] h-[150px] rounded-[20px]" src={product.images} alt='/' />
-                    <img className="border border-black border-r-4 mb-8 p-[5px] w-[150px] h-[150px] rounded-[20px]" src={product.images} alt='/' />
-                    <img className="border border-black border-r-4 mb-8 p-[5px] w-[150px] h-[150px] rounded-[20px]" src={product.images} alt='/' />
+                    <Image className="border border-black border-r-4 mb-8 p-[5px] w-[150px] h-[150px] rounded-[20px]" src={product.images} alt='/' />
+                    <Image className="border border-black border-r-4 mb-8 p-[5px] w-[150px] h-[150px] rounded-[20px]" src={product.images} alt='/' />
+                    <Image className="border border-black border-r-4 mb-8 p-[5px] w-[150px] h-[150px] rounded-[20px]" src={product.images} alt='/' />
                 </div>
                 <div className="flex items-center mb-9">
-                    <img className="border border-black border-opacity-25 w-[501px] h-[530px] rounded-[20px] "src={product.images} alt='/' />
+                    <Image className="border border-black border-opacity-25 w-[501px] h-[530px] rounded-[20px] "src={product.images} alt='/' />
                 </div>
                 <div className="flex flex-col justify-start pl-[150px] mt-3">
                     <p className="text-black text-[30px] pl-5 pb-2">{product.title}</p>

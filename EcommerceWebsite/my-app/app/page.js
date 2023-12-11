@@ -8,7 +8,7 @@ import Link from "next/link";
 import { SearchBar } from "./components/SearchBar";
 import { SearchResultsList } from "./components/SearchResultsList";
 
-const page = () => {
+const Page = () => {
   const slideLeft = () => {
     var slider = document.getElementById('slider')
     slider.scrollLeft = slider.scrollLeft - 500;
@@ -58,4 +58,4 @@ const page = () => {
   );
 };
 
-export default page;  
+export default Page;  
