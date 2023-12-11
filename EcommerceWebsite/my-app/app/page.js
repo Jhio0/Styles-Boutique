@@ -24,7 +24,7 @@ const page = () => {
     <div className="bg-[#f5f5f5] min-h-screen">
       <Box/>
       <div className="flex flex-col items-center justify-center">
-        <div className="bg-cover bg-center m-5 flex flex-col justify-center items-center w-full h-[530px] bg-[url(../assets/mainPage3.jpg)] ">
+        <div className="bg-cover bg-center m-5 flex flex-col justify-center items-center w-full h-[530px] bg-[url(https://media.timeout.com/images/105419751/image.jpg)] ">
             <p className="flex items-center font-family:'Poppins-Medium',Helvetica] font-medium text-white text-[38.4px] tracking-[6.38px] leading-[normal]">
             Elevate Your Wardrobe with Unique Styles for Every Vibe
             </p>
