@@ -6,6 +6,9 @@ import { AiOutlineSearch } from 'react-icons/ai';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import Link from "next/link";
 
+import { SearchBar } from "./components/SearchBar";
+import { SearchResultsList } from "./components/SearchResultsList";
+
 const page = () => {
   const slideLeft = () => {
     var slider = document.getElementById('slider')
@@ -16,9 +19,12 @@ const page = () => {
     slider.scrollLeft = slider.scrollLeft + 500;
   };
 
+  const [results, setResults] = useState([]);
+
   return (
-    <div className="bg-[#f5f5f5] flex flex-col items-center justify-center">
+    <div className="bg-[#f5f5f5] min-h-screen">
       <Box/>
+      <div className="flex flex-col items-center justify-center">
         <div className="bg-cover bg-center m-5 flex flex-col justify-center items-center w-full h-[530px] bg-[url(../assets/mainPage3.jpg)] ">
             <p className="flex items-center font-family:'Poppins-Medium',Helvetica] font-medium text-white text-[38.4px] tracking-[6.38px] leading-[normal]">
             Elevate Your Wardrobe with Unique Styles for Every Vibe
@@ -26,9 +32,9 @@ const page = () => {
             <div className="flex justify-center items-center[font-family:'Poppins-ExtraBold',Helvetica] font-extrabold text-white text-[96px] tracking-[0] leading-[normal]">
             StyleScape Boutique
             </div>
-            <div className="flex items-center w-[518px] h-[38px] bg-white rounded-[10px] border border-solid border-[#9f9f9f]">
-              <div className="flex justify-center items-center ml-auto mr-3"><AiOutlineSearch className="w-5 h-5 text-black" /></div>
-            </div>
+
+            <SearchBar setResults={setResults}/>
+            <SearchResultsList className="text-black" results={results}/>
         </div>
         <div className="flex mb-5">
           <div className="flex items-center ">
@@ -48,6 +54,7 @@ const page = () => {
             <MdChevronRight onClick={slideRight} size={40} className="text-black opacity-50 cursor-pointer hover:opacity-100"/>
           </div>
         </div>
+    </div>
     </div>
   );
 };
