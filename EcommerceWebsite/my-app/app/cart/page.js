@@ -5,6 +5,8 @@ import { remove, updateQuantity } from '@/redux/CartSlice';
 import { useDispatch,useSelector } from 'react-redux';
 import { Box } from '../components/header';
 import Image from 'next/image';
+
+import { FooterPage } from '../components/footer';
 const Cartpage = () => {
     const dispatch=useDispatch();
     const cartitems = useSelector((state)=>state.cart)
@@ -25,9 +27,9 @@ const Cartpage = () => {
     };
     
       return (
-        <div className='font-sans antialiased p-5 bg-gray-100 min-h-screen'>
+        <div className='flex flex-col font-sans antialiased p-5 bg-gray-100 min-h-screen'>
           <Box />
-          <div className='max-w-4xl mx-auto'>
+          <div className='max-w-4xl mx-auto flex-1'>
             <h1 className='text-2xl text-black font-semibold mb-5'>Shopping Cart</h1>
             {cartitems.map((item) => (
               <div
@@ -66,6 +68,7 @@ const Cartpage = () => {
                     </div>
                   </div>
                 </div>
+                
               </div>
             ))}
             {cartitems.length > 0 && (
@@ -76,8 +79,11 @@ const Cartpage = () => {
                 </button>
               </div>
             )}
+          
           </div>
+          <FooterPage />
         </div>
+        
       );
     };
     

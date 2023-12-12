@@ -8,6 +8,9 @@ import Link from "next/link";
 import { SearchBar } from "./components/SearchBar";
 import { SearchResultsList } from "./components/SearchResultsList";
 import Image from "next/image";
+import SocialLogo from 'social-logos';
+
+import { FooterPage } from "./components/footer";
 const Page = () => {
   const slideLeft = () => {
     var slider = document.getElementById('slider')
@@ -54,6 +57,8 @@ const Page = () => {
           </div>
         </div>
     </div>
+    
+     <FooterPage/>
     </div>
   );
 };

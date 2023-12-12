@@ -7,6 +7,7 @@ import { useSearchParams } from 'next/navigation'
 import { useDispatch } from 'react-redux';
 import { add } from '@/redux/CartSlice';
 import Image from "next/image";
+import { FooterPage } from "../components/footer";
 function ProductDetailsPage ({selectedProduct})  {
     const searchParams = useSearchParams()
     const id = searchParams.get('id');
@@ -87,6 +88,7 @@ function ProductDetailsPage ({selectedProduct})  {
                     </div>
                 </div>
             </div>
+            <FooterPage/>
         </div>
     )
 }

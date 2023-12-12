@@ -3,7 +3,7 @@ import { Box } from '@/app/components/header';
 import { useState, useEffect } from 'react';
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
-
+import { FooterPage } from '@/app/components/footer';
 const ContactUs = () => {
   const form = useRef();
   const [showNotification, setShowNotification] = useState(false);
@@ -110,6 +110,7 @@ const ContactUs = () => {
         </form>
       </div>
     </div>
+    <FooterPage/>
     </div>
   );
 };

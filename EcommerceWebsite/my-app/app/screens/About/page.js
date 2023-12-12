@@ -2,6 +2,7 @@ import React from 'react';
 import { journalData } from '@/app/components/journalComponent';
 import { Box } from '@/app/components/header';
 import Image from 'next/image';
+import { FooterPage } from '@/app/components/footer';
 const JournalPage = () => {
   return (
     <div className="min-h-screen bg-gray-100">
@@ -51,6 +52,7 @@ const JournalPage = () => {
           ))}
         </div>
       </div>
+      <FooterPage/>
     </div>
   );
 };

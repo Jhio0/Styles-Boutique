@@ -7,8 +7,7 @@ import { AiOutlineShoppingCart } from 'react-icons/ai';
 import Image from "next/image";
 
 import Link from "next/link";
-
-
+import { FooterPage } from "@/app/components/footer";
 const Page = () => {
   const [products, setProducts] = useState([]);
   const dispatch = useDispatch();
@@ -67,7 +66,7 @@ const Page = () => {
           </div>
         ))}
       </div>
-
+      <FooterPage/>
     </div>
   );
 };
